@@ -1,8 +1,16 @@
 import request from '@/utils/request'
 
-export function personAuxiliary(data) {
+export function personAuxiliaryMaintainInit(data) {
   return request({
-    url: '/api/personinfo/personAuxiliary',
+    url: '/api/personinfo/personAuxiliaryMaintainInit',
+    method: 'POST',
+    data
+  })
+}
+
+export function personAuxiliaryMaintain(data) {
+  return request({
+    url: '/api/personinfo/personAuxiliaryMaintain',
     method: 'POST',
     data
   })
