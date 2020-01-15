@@ -98,8 +98,8 @@ export const constantRoutes = [
         meta: { title: '考务信息查询'}
       },
       {
-        path: 'coursenew',
-        name: 'coursenew',
+        path: 'examArrangeManage',
+        name: 'examArrangeManage',
         component: () => import('@/views/coursenew/examArrangeManage'),
         meta: { title: '考试安排管理'}
       }

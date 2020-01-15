@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import { Login } from '@/api/login'
 export default {
   name: 'Login',
   data() {
@@ -95,20 +94,6 @@ export default {
       })
     },
     handleLogin() {
-      Login({ username: this.loginForm.userName, password: this.loginForm.password }).then(response => {
-        if (response.reCode == 0) {
-          this.$router.push({ path: '/dashboard' })
-        } else {
-          this.$message({
-            type: 'error',
-            message: '登录信息错误'
-          })
-        }
-        this.loading = false
-      }).catch(err => {
-        this.loading = false
-        console.log(err)
-      })
     }
   }
 }
