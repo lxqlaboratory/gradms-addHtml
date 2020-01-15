@@ -36,47 +36,76 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
   {
-    path: '/dashboard',
+    path: '/personinfo',
     component: Layout,
-    redirect: '/dashboard/dashboard',
+    name: 'personinfo',
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '系统通知', icon: 'dashboard', roles: ['100']}
+      path: 'personAuxiliaryMaintain',
+      name: 'personAuxiliaryMaintain',
+      component: () => import('@/views/personinfo/personAuxiliaryMaintain'),
+      meta: { title: '系统通知'}
     }]
   },
   {
-    path: '/personInfo',
+    path: '/coursenew',
     component: Layout,
-    name: 'personInfo',
+    name: 'coursenew',
     meta: {
-      title: '个人信息',
+      title: '教师管理',
       icon: 'example'
     },
     children: [
       {
-        path: 'baseInformation',
-        name: 'baseInformation',
-        component: () => import('@/views/personInfo/baseInformation'),
-        meta: { title: '个人信息', icon: 'user' , roles: ['100'] }
+        path: 'collegeWorkOutTeachingSchedule',
+        name: 'collegeWorkOutTeachingSchedule',
+        component: () => import('@/views/coursenew/collegeWorkOutTeachingSchedule'),
+        meta: { title: '学院排课' }
       },
       {
-        path: 'changepwd',
-        name: 'changepwd',
-        component: () => import('@/views/personInfo/changepwd'),
-        meta: { title: '修改密码', icon: 'password' , roles: ['100'] }
+        path: 'examAffairMaterialExport',
+        name: 'examAffairMaterialExport',
+        component: () => import('@/views/coursenew/examAffairMaterialExport'),
+        meta: { title: '考务材料导出' }
+      },
+      {
+        path: 'examTourArrange',
+        name: 'examTourArrange',
+        component: () => import('@/views/coursenew/examTourArrange'),
+        meta: { title: '巡考人员安排 '}
+      },
+      {
+        path: 'teacherCourseTaskQuery',
+        name: 'teacherCourseTaskQuery',
+        component: () => import('@/views/coursenew/teacherCourseTaskQuery'),
+        meta: { title: '教师授课查询'}
+      },
+      {
+        path: 'collegeWorkOutTeachingSchedule',
+        name: 'collegeWorkOutTeachingSchedule',
+        component: () => import('@/views/coursenew/collegeWorkOutTeachingSchedule'),
+        meta: { title: '学院排课'}
+      },
+      {
+        path: 'examAffairInfoQuery',
+        name: 'examAffairInfoQuery',
+        component: () => import('@/views/coursenew/examAffairInfoQuery'),
+        meta: { title: '考务信息查询'}
+      },
+      {
+        path: 'coursenew',
+        name: 'coursenew',
+        component: () => import('@/views/coursenew/examArrangeManage'),
+        meta: { title: '考试安排管理'}
       }
     ]
   },
-  {path: '/', redirect: '/dashboard' ,hidden: true },
+  {path: '/', redirect: '/login' ,hidden: true },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
