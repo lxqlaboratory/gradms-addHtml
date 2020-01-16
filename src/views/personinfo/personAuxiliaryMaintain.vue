@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     fetchData() {
-      personAuxiliaryMaintainInit({ 'session': document.cookie }).then(res => {
+      personAuxiliaryMaintainInit({ 'session': document.cookie ,'personId': this.$route.query.personId }).then(res => {
         this.employList = res.data.employList
         this.data.employUnit = res.data.employUnit
         this.data.bankNo = res.data.bankNo
@@ -72,7 +72,8 @@ export default {
     },
     submit(){
       personAuxiliaryMaintain({'session': document.cookie , 'employType': this.data.employType,
-        'employUnit': this.data.employUnit,'bankNo': this.data.bankNo,'bankName': this.data.bankName
+        'employUnit': this.data.employUnit,'bankNo': this.data.bankNo,'bankName': this.data.bankName,
+        'personId': this.$route.query.personId
       }).then(res => {
        if(res.code == '0'){
          this.$message({

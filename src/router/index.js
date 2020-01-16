@@ -49,7 +49,7 @@ export const constantRoutes = [
       path: 'personAuxiliaryMaintain',
       name: 'personAuxiliaryMaintain',
       component: () => import('@/views/personinfo/personAuxiliaryMaintain'),
-      meta: { title: '系统通知'}
+      meta: { title: '辅助信息维护'}
     }]
   },
   {
@@ -98,9 +98,21 @@ export const constantRoutes = [
         meta: { title: '考务信息查询'}
       },
       {
-        path: 'examArrangeManage',
-        name: 'examArrangeManage',
-        component: () => import('@/views/coursenew/examArrangeManage'),
+        path: 'examAffairPersonManage',
+        name: 'examAffairPersonManage',
+        component: () => import('@/views/coursenew/examAffairPersonManage'),
+        meta: { title: '监考人员库'}
+      },
+      {
+        path: 'examAffairPersonManageAdd',
+        name: 'examAffairPersonManageAdd',
+        component: () => import('@/views/coursenew/examAffairPersonManageAdd'),
+        meta: { title: '监考人员添加'}
+      },
+      {
+        path: 'examInvigilaterArrange',
+        name: 'examInvigilaterArrange',
+        component: () => import('@/views/coursenew/examInvigilaterArrange'),
         meta: { title: '考试安排管理'}
       }
     ]
